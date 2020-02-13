@@ -1,0 +1,12 @@
+.cardsContainer {
+    display: flex;
+    .count {
+        border-radius: 50%;
+        background-color: rebeccapurple;
+        padding: 4px;
+        width: 21px;
+        text-align: center;
+        height: 21px;
+        color: white;
+    }
+}

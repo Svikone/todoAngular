@@ -1,0 +1,17 @@
+<div>
+    <form class="example-form" [formGroup]="signInForm"> 
+        <p>Sign In</p>
+        
+        <input class="inp" placeholder="Введите Email" formControlName="email">
+        <div *ngIf="_email.invalid && (_email.touched || _email.dirty)"  class="error">
+            <span *ngIf="_email.errors?.required">Обязательное поле</span>
+            <span *ngIf="_email.errors?.email">Значение должно соответствовать email</span>
+        </div> 
+        <input class="inp" placeholder="Введите пароль"  formControlName="password">
+        <div *ngIf="_password.invalid && (_password.touched || _password.dirty)" class="error">
+            <span *ngIf="_password.errors?.required">Обязательное поле</span>
+        </div> 
+        <button mat-button [disabled]="!signInForm.valid" (click)="onSubmit()">Добавить</button>
+        <div class="sign" routerLink="/user/signout">signOut</div>
+    </form>
+</div>

@@ -1,0 +1,65 @@
+.mat-toolbar {
+    height: 64px;
+    border-bottom: 1px solid #a9a7a7;
+    display: flex;
+    justify-content: space-between;
+    .wrapper {
+        display: flex;
+        .logo {
+            // padding-right: 10px;    
+        }
+        .mat-button {
+            margin-left: 10px;
+        }
+    }
+    .user {
+        height: 36px;
+        .userLogo {
+            border-radius: 50%;
+            height: 64%;
+            padding: 7px;
+            border: 1px solid #cacaca;
+            cursor: pointer;
+            &:hover {
+                background-color: #cacaca;
+            }
+        }
+        .userWrapper {
+            position: absolute;
+            width: 170px;
+            margin-left: -116px;
+            margin-top: 22px;
+            border-radius: 5px;
+            border: 1px solid #a9a7a7;
+            z-index: 99; 
+            background-color: white;
+            color: #a9a7a7;
+            .info {
+                .name {
+                    color: black;
+                }
+                .email {
+                    padding-top: 5px;
+                }
+                padding: 10px;
+                border-bottom: 1px solid #a9a7a7;
+                text-align: center;
+                font-size: 12px;
+            }
+            .container {
+                color: #673AB7;
+                .login {
+                    padding: 8px;
+                    cursor: pointer;
+                    border-bottom: 1px solid #cacaca9e;
+                    &:hover {
+                        background-color: #cacaca9e;
+                    }
+                }
+                // .signOut {
+                //     padding: 8px;
+                // }
+            }
+        }
+    }
+}
