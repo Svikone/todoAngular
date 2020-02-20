@@ -10,6 +10,7 @@ import { BoardComponent} from './board.component';
 import { HeaderComponent } from './header/header.component';
 import { EditCardComponent } from './edit-card/edit-card.component';
 
+
 const routes: Routes = [
   {
     path:'',
@@ -28,7 +29,7 @@ const routes: Routes = [
         component: EditCardComponent
       },
       {
-        path: 'card/:id',
+        path: 'card/shared',
         component: AllCardsComponent
       },
     ]

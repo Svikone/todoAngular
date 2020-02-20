@@ -1,11 +1,16 @@
 <mat-toolbar>
   <div class="wrapper">
     <div class="logo">To Do List</div>
-    <div class="menuContainer">
-      <button mat-button routerLink="/board/card">Мои карточки</button>
-      <button mat-button routerLink="/board/create">Создать карточку</button>
-      <button mat-button routerLink="/board/card/shared">Карточки которые вам розшарили</button>
-
+    <div class="borgerMenu" (click)="showMenu = !showMenu">
+      <img src="../../../assets/img/menu.png">
+    </div>
+    <div class="menuContainer" *ngIf="showMenuWindow || showMenu">
+      <div class="menuClose" (click)="showMenu = false">
+        <img src="../../../assets/img/menu-close.png">
+      </div>
+      <button mat-button routerLink="/board/card" (click)="showMenu = false">Мои карточки</button>
+      <button mat-button routerLink="/board/create" (click)="showMenu = false">Создать карточку</button>
+      <button mat-button routerLink="/board/card/shared" (click)="showMenu = false">Карточки которые вам розшарили</button>
     </div>
 
   </div>

@@ -1,12 +1,13 @@
 .cardsContainer {
     display: flex;
+    padding: 5px;
     .count {
-        border-radius: 50%;
-        background-color: rebeccapurple;
+        border-radius: 100%;
+        border: 1px solid #393e41;
         padding: 4px;
         width: 21px;
         text-align: center;
         height: 21px;
-        color: white;
+        color: #393e41;
     }
 }

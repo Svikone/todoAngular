@@ -3,6 +3,8 @@ import { HttpService } from '../../service/http.service';
 import { ICard } from '../../core/interfaces/card.interface';
 import { EApiUrls } from '../../core/enums/api-urls.enum';
 import { Router, ActivatedRoute} from '@angular/router';
+import { EPageMode } from '../../core/enums/page-mode.enums';
+
 
 @Component({
   selector: 'app-all-cards',
@@ -16,12 +18,11 @@ export class AllCardsComponent implements OnInit {
 
   constructor(private http: HttpService,
               private activateRoute: ActivatedRoute) { 
-    this.feature = activateRoute.snapshot.params['id'];
+    this.feature = activateRoute.snapshot.routeConfig.path;
   }
 
   ngOnInit() {
     this.allCards()
-    console.log(this.feature)
   }
   remove(_id) {
     console.log(_id)
@@ -34,7 +35,7 @@ export class AllCardsComponent implements OnInit {
   }
 
   allCards() {
-    if(this.feature == 'shared') {
+    if(this.feature == EPageMode.SHARED) {
       this.http.get(EApiUrls.CARD_ALL_SHARED).subscribe((value: ICard[])  =>{
         this.allcards = value
         console.log(this.allcards)

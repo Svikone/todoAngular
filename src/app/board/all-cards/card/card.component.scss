@@ -5,17 +5,23 @@
         margin-top: 10px;
         background-color:#9e9e9e8c;
         .mat-card-title {
+            font-size: 16px;
             display: flex;
+            word-break: break-word;
             flex-direction: column;
             .panel {
                 display: flex;
                 justify-content: space-between;
                 padding: 8px;
+                border-bottom: 1px solid #a9a7a7;
                 .date {
                     color: #607D8B;
                 }
                 .wrap {
                     display: flex;
+                    .sharedBtn {
+                        margin-right: 15px;
+                    }
                     .SharContaiber {
                         display: flex;
                         margin-right: 19px;
@@ -23,29 +29,27 @@
                         // background: white;
                         border-radius: 5px;
                         .btn {
-                            height: 103px;
-                            line-height: 121px;
-                            
+                            line-height: 147px;
                             img {
                                 width: 30px;
                                 padding: 0px 10px;
                                 cursor: pointer;
                             }
                         }
-                        .selectWrapp {
-                            display: flex;
-                            justify-content: space-between;
-                            height: 30px;
-                            position: relative;
-                            width: 200px;
-                            .close {
-                                margin-left: auto;
-                            }
-                            select {
-                                width: 80%;
-                            }
+                        // .selectWrapp {
+                        //     display: flex;
+                        //     justify-content: space-between;
+                        //     height: 30px;
+                        //     position: relative;
+                        //     width: 200px;
+                        //     .close {
+                        //         margin-left: auto;
+                        //     }
+                        //     select {
+                        //         width: 80%;
+                        //     }
                 
-                        }
+                        // }
                     }
                     .close {
                         background: mediumslateblue;
@@ -53,13 +57,13 @@
                         height: 15px;
                         text-align: center;
                         padding: 6px;
-                        padding-bottom: 7px;
+                        font-size: 15px;
                         border-radius: 50%;
                         cursor: pointer;
                         border: 1px solid mediumslateblue;
                         transition: all .5s;
                         color: #cacaca;
-                        margin-left: 53px;
+                        margin-left: auto;
                         &:hover {
                             color:#FF5722;
                             border: 1px solid #FF5722;
@@ -101,7 +105,7 @@
 
 
         position: absolute;
-        min-height: 94px;;
+        min-height: 147px;
         width: 200px;
         background-color: #ebeaeaf5;
 
@@ -112,29 +116,43 @@
         backface-visibility: hidden;
         // border-radius: 50%;
         
-        button {
-            width: 159px;
+        .closeWrapp {
+            display: flex;
         }
         input {
             display: block;
-            width: 144px;
-            padding: 6px;
+            
         }
     }
     .player img {
       border-radius: 50%;
     }
-
+    .player .front {
+        
+        .example-full-width {
+            font-size: 18px;
+            width: 100%;
+            input {
+                padding: 0px;
+            }
+        }
+        .mat-button {
+            width: 100%;
+        }
+    }
     .player .back {
         -webkit-transform: rotateY(180deg);
         transform: rotateY(180deg);
         .shar {
+            font-size: 18px;
             display: flex;
             justify-content: space-between;
             .closeSharred {
                 color: red;
                 cursor: pointer;
+                margin-right: 4px;
             }
+            
         }
     }
 

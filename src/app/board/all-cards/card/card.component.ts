@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute} from '@angular/router';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../../../service/http.service';
 import { IUser } from '../../../core/interfaces/user.interface';
 import { EApiUrls } from '../../../core/enums/api-urls.enum';
+import { EPageMode } from '../../../core/enums/page-mode.enums';
 
 @Component({
   selector: 'app-card',
@@ -14,21 +15,26 @@ export class CardComponent implements OnInit {
   @Input()  item
   @Output() removeEmmiter = new EventEmitter()
 
-  selected = new FormControl('')
+  myForm = new FormGroup({
+    selected: new FormControl('')
+    
+  })
   allusers: IUser[] = [];
   showUser: Boolean;
   feature: String;
   flipped: Boolean;
+  EPageMode = EPageMode;
 
 
   constructor(private _router: Router,
               private http: HttpService,
               private activateRoute: ActivatedRoute) {
-    this.feature = activateRoute.snapshot.params['id'];
+    this.feature = activateRoute.snapshot.routeConfig.path;
+    
   }
 
   ngOnInit() {
-    // this.getUsers()
+    
   }
 
   removeItem(_id) {
@@ -39,21 +45,11 @@ export class CardComponent implements OnInit {
     this._router.navigate(['board/edit/'+_id])
   }
 
-  // getUsers() {
-  //   this.http.get(EApiUrls.USER_GET).subscribe((value: IUser[])  =>{
-  //     this.allusers = value
-  //     console.log(this.allusers)
-
-  //   },
-  //   error => {
-  //     // error - объект ошибки
-  //   });
-  // }
 
   shared(id) {
     this.showUser = !this.showUser
-    const _idShared = this.selected.value.email
-    console.log(_idShared)
+    const _idShared = this.myForm.controls.selected.value.email
+    console.log(this.myForm.controls.selected)
     this.http.post(EApiUrls.USER_ADD_SHARED,{_id: id, _idShared: _idShared}).subscribe(value =>{
     },
     error => {
@@ -74,7 +70,6 @@ export class CardComponent implements OnInit {
   searchUsers(searchValue: String) {
       this.http.post(EApiUrls.CARD_SEARCH_USERS,{_searchValue: searchValue}).subscribe((value: IUser[]) =>{
         this.allusers = value
-  //     console.log(this.allusers)
     },
     error => {
     });
