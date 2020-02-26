@@ -167,6 +167,10 @@ const routes = [
         path: _core_enums_app_urls_enums__WEBPACK_IMPORTED_MODULE_6__["EAppUrls"].USER,
         loadChildren: () => _user_user_module__WEBPACK_IMPORTED_MODULE_4__["UserModule"]
     },
+    {
+        path: '**',
+        loadChildren: () => _board_board_module__WEBPACK_IMPORTED_MODULE_3__["BoardModule"]
+    }
 ];
 let AppRoutingModule = class AppRoutingModule {
 };

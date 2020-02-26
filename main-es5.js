@@ -167,6 +167,10 @@ var routes = [
         path: _core_enums_app_urls_enums__WEBPACK_IMPORTED_MODULE_6__["EAppUrls"].USER,
         loadChildren: function () { return _user_user_module__WEBPACK_IMPORTED_MODULE_4__["UserModule"]; }
     },
+    {
+        path: '**',
+        loadChildren: function () { return _board_board_module__WEBPACK_IMPORTED_MODULE_3__["BoardModule"]; }
+    }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
