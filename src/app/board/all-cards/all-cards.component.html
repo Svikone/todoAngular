@@ -1,7 +1,0 @@
-<div class="cardsContainer"> 
-    <p>Все ваши карточки</p>
-    <div class="count">{{allcards.length}}</div>
-</div>
-<app-card *ngFor="let card of allcards" [item]="card" (removeEmmiter)="remove($event)"></app-card>
-
-
